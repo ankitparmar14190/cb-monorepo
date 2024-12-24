@@ -1,0 +1,19 @@
+.userIcon {
+    margin-left: 20px;
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+    transform: translateX(-10px);
+    box-sizing: border-box;
+}
+
+.menu {
+    width: 220px;
+}
+
+.icon {
+    color: #0f384e !important;
+}
+
+.leftPadding {
+    padding-left: 50px;
+}

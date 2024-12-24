@@ -1,0 +1,43 @@
+.customAppBar {
+    background-color: #e3edf0 !important;
+    color: #0f384e !important;
+  }
+   
+  .image {
+    display: 'flex';
+    align-items: 'center';
+  }
+   
+  .icon {
+    color: #0f384e !important;
+    margin-top: 20px;
+  }
+   
+  .profileImg {
+    cursor: pointer;
+  }
+   
+  .menu {
+    background-color: #e3edf0 !important;
+    margin-left: 20px;
+    color: #0f384e !important;
+  }
+  .menuColor {
+    color: #0f384e !important;
+  }
+   
+  .userIcon {
+    margin-left: 20px;
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+    transform: translateX(-10px);
+    box-sizing: border-box;
+  }
+
+  .navigationBar {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 50px;
+  }

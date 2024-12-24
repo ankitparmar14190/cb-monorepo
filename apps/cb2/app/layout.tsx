@@ -1,4 +1,5 @@
 import './global.css';
+import '@element/themes/lib/css/bayer/bayer.theme.element.min.css';
 
 export const metadata = {
   title: 'Welcome to cb2',
@@ -12,6 +13,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+      <link
+          href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700|Roboto+Mono:400,500|Material+Icons"
+          rel="stylesheet"
+        />
+      </head>
       <body>{children}</body>
     </html>
   );

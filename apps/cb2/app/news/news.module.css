@@ -1,0 +1,42 @@
+.card {
+    max-width: 200px;
+    height: 200px;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+   
+  .display {
+    display: flex;
+    gap: 400px;
+  }
+   
+  .grid {
+    margin: 2rem 4rem 2rem 4rem;
+  }
+   
+  .display h1 {
+    margin-top: 70px;
+    font-weight: 900;
+  }
+   
+  .newsDescription {
+    font-size: 17px;
+    line-height: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: rgba(31, 41, 55, 0.1);
+    padding: 7px;
+    border-radius: 5px;
+  }
+   
+  .grid h1 {
+    margin-bottom: 10px;
+  }
+  .newsDescription p,
+  .newsDescription a {
+    font-size: 17px;
+  }
+   
+  .newsDescription Link{
+    margin-bottom: 20px;
+  }

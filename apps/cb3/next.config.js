@@ -12,10 +12,6 @@ const nextConfig = {
     // See: https://github.com/gregberge/svgr
     svgr: false,
   },
-  images: {
-    domains: ['chhcpportalode4.prod.acquia-sites.com'],
-  },
-  assetPrefix: "/cb-static",
 };
 
 const plugins = [
