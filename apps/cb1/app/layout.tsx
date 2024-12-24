@@ -1,3 +1,4 @@
+import '@element/themes/bayer';
 import './global.css';
 
 export const metadata = {
@@ -12,6 +13,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+            <link
+          href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700|Roboto+Mono:400,500|Material+Icons"
+          rel="stylesheet"
+        />
+      </head>
       <body>{children}</body>
     </html>
   );
