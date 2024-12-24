@@ -2,7 +2,9 @@
   "name": "@cb-monorepo-nx/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "start": "nx run-many --target=serve --projects=cb1,cb2 --parallel"
+  },
   "private": true,
   "dependencies": {
     "next": "14.2.16",
