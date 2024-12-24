@@ -1,5 +1,5 @@
 import './global.css';
-import '@element/themes/lib/css/bayer/bayer.theme.element.min.css';
+import '@element/themes/bayer';
 
 export const metadata = {
   title: 'Welcome to cb2',

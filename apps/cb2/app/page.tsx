@@ -1,3 +1,4 @@
+import '@element/themes/bayer';
 import Header from "./header/page";
 // import '@element/themes/bayer';
 // import '@element/themes/button';
