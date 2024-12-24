@@ -6,6 +6,9 @@
     "start": "nx run-many --target=serve --projects=cb1,cb2 --parallel"
   },
   "private": true,
+  "publishConfig": {
+  "registry": "https://artifactory.bayer.com/artifactory/api/npm/npm-platforms-engineering/"
+  },
   "dependencies": {
     "@element/react-button": "^5.44.0",
     "@element/react-components": "^5.44.0",
