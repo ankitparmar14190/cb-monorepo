@@ -15,7 +15,6 @@ const nextConfig = {
   images: {
     domains: ['chhcpportalode4.prod.acquia-sites.com'],
   },
-  //assetPrefix: "/cb-static",
 };
 
 const plugins = [

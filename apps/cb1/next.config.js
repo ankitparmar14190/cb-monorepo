@@ -1,6 +1,6 @@
 //@ts-check
 
-const REMOTE_URL = 'https://remote-app-two.vercel.app';
+const REMOTE_URL = 'https://remote-omega.vercel.app';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { composePlugins, withNx } = require('@nx/next');
