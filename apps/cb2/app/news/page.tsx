@@ -60,8 +60,6 @@ async function News({ props }: any) {
         const image = await imageNews.json();
         const imageUrl = `${baseUrl}${image.data.attributes.uri.url}`;
 
-        console.log('item =>', item.attributes);
-
         return (
             <>
                 <div key={newsId} className="justify-center flex-1">
@@ -81,8 +79,12 @@ async function News({ props }: any) {
 
                             <div dangerouslySetInnerHTML={{ __html: item.attributes.body.value }} className='newsDescription' />
                             <p className="text-gray-700 mb-5">
-                                Start: {item.attributes.field_news_campaign_period.value} end:{" "}
-                                {item.attributes.field_news_campaign_period.end_value}
+                                {
+                                    item.attributes.field_news_campaign_period &&
+                                    <p>Start: {item.attributes.field_news_campaign_period?.value}  end:{" "}
+                                {item.attributes.field_news_campaign_period?.end_value}</p>
+                                }
+                               
                             </p>
                             <div className="flex gap-6">
                                 <div className="rounded-full bg-gray-200 py-1 px-4 text-gray-800 hover:bg-slate-500">
