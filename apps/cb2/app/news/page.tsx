@@ -35,9 +35,6 @@ async function fetchToken() {
 }
 
 async function News({ props }: any) {
-    const { variant, gridAlign, horizontalAlign, rowGap, columnGap } = {
-        ...props,
-    };
     const getToken = await fetchToken();
     const newsResponse = await drupalClient.fetch(`${baseUrl}/jsonapi/node/news`, {
         headers: {
