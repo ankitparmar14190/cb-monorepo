@@ -52,6 +52,7 @@ export default function Header() {
             <ul className={style.navigationBar}>
                 <li className={pathname === '/' ? 'active' : ""}><Link href="/">Home</Link></li>
                 <li className={pathname === '/news' ? 'active' : ""}><Link href="/news">News</Link></li>
+                <li className={pathname === '/hello' ? 'active' : ""}><Link href="/hello">Hello</Link></li>
             </ul>
           </div>
         }

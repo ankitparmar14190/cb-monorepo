@@ -22,6 +22,10 @@ const nextConfig = {
       {
         source: "/news",
         destination: `${REMOTE_URL}/news`,
+      },
+      {
+        source: "/hello",
+        destination: `${REMOTE_URL}/hello`,
       }
     ]
   }
