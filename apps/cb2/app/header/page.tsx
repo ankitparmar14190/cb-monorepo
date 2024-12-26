@@ -48,7 +48,7 @@ export default function Header() {
                 marginTop: '5px',
               }}
             />
-            <p>ELEVATE</p>
+            <p>CLUBBAYER</p>
             <ul className={style.navigationBar}>
                 <li className={pathname === '/' ? 'active' : ""}><Link href="/">Home</Link></li>
                 <li className={pathname === '/news' ? 'active' : ""}><Link href="/news">News</Link></li>
