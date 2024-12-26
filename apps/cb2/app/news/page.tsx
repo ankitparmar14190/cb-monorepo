@@ -60,6 +60,8 @@ async function News({ props }: any) {
         const image = await imageNews.json();
         const imageUrl = `${baseUrl}${image.data.attributes.uri.url}`;
 
+        console.log('item =>', item.attributes);
+
         return (
             <>
                 <div key={newsId} className="justify-center flex-1">
