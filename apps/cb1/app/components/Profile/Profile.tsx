@@ -20,8 +20,7 @@ const items = [
                 className={style.icon}
             />
         ),
-        href: 'https://github.platforms.engineering/element/element-react',
-        target: '_blank',
+        href: '/profile'
     },
     {
         text: 'Change language',
@@ -92,7 +91,7 @@ function UserProfile() {
                     <div className={style.menu}>
                         <List>
                             {items.map((item, index) => {
-                                const { text, icon, language, ...otherProps } = item;
+                                const { text, icon, href, language, ...otherProps } = item;
                                 return (
                                     <div key={'list' + index}>
                                         <ListItem {...otherProps} className='userSubMenuBox'>

@@ -1,5 +1,6 @@
 import '@element/themes/bayer';
 import './global.css';
+import Header from './components/Header/Header';
 
 export const metadata = {
   title: 'Elevate',
@@ -19,7 +20,10 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }

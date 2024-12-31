@@ -9,7 +9,7 @@
 import React, { useState, useCallback, useMemo } from 'react';
 import style from './header.module.css';
 import Image from 'next/image';
-import UserProfile from '../userProfile/page';
+import UserProfile from '../Profile/Profile';
  
 import { useRouter, usePathname } from 'next/navigation';
 import Link from 'next/link';
