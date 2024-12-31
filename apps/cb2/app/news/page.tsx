@@ -3,7 +3,6 @@ import { drupalClient } from "../lib/drupalClient";
 import Image from "next/image";
 const baseUrl = process.env.DRUPAL_BASE_URL;
 import Link from "next/link";
-import Header from '../header/page';
 
 async function fetchToken() {
     try {
@@ -103,7 +102,6 @@ async function News({ props }: any) {
     return (
 
         <div className="news">
-            <Header />
             <div className='newsList flex'>
                 {getNews}
             </div>

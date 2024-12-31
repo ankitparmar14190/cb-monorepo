@@ -1,5 +1,6 @@
 import './global.css';
 import '@element/themes/bayer';
+import Header from './components/Header/Header';
 
 export const metadata = {
   title: 'Clubbayer',
@@ -19,7 +20,10 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }

@@ -1,5 +1,4 @@
 import '@element/themes/bayer';
-import Header from "./header/page";
 // import '@element/themes/bayer';
 // import '@element/themes/button';
 // import '@element/themes/textfield';
@@ -13,7 +12,7 @@ export default function Index() {
    */
   return (
     <div>
-      <Header/>
+      <h1>Home Page</h1>
     </div>
   );
 }
