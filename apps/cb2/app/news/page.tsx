@@ -35,6 +35,7 @@ async function fetchToken() {
 
 async function News({ props }: any) {
     const getToken = await fetchToken();
+
     const newsResponse = await drupalClient.fetch(`${baseUrl}/jsonapi/node/news`, {
         headers: {
             Authorization: `Bearer ${getToken.access_token}`
@@ -42,12 +43,11 @@ async function News({ props }: any) {
     });
 
     const data = await newsResponse.json();
-
     const news = data.data;
 
-    const getNews = news.map(async (item: any) => {
+    // Use Promise.all to resolve all the promises before rendering
+    const getNews = await Promise.all(news.map(async (item: any) => {
         const newsId = item.id;
-
         const imageId = item.relationships.field_news_image.data.id;
 
         const imageNews = await drupalClient.fetch(`${baseUrl}/jsonapi/file/mime_attachment_binary/${imageId}`, {
@@ -60,53 +60,48 @@ async function News({ props }: any) {
         const imageUrl = `${baseUrl}${image.data.attributes.uri.url}`;
 
         return (
-            <>
-                <div key={newsId} className="justify-center flex-1">
-                    <div className="rounded-2xl overflow-hidden">
-                        <div className="p-7 text-xl">
-                            <h1 className="font-extrabold text-gray-800 mb-5">
-                                {item.attributes.title}
-                            </h1>
+            <div key={newsId} className="justify-center flex-1">
+                <div className="rounded-2xl overflow-hidden">
+                    <div className="p-7 text-xl">
+                        <h1 className="font-extrabold text-gray-800 mb-5">
+                            {item.attributes.title}
+                        </h1>
 
-                            <Image
-                                src={imageUrl}
-                                width={200}
-                                height={200}
-                                alt="image"
-                                style={{ maxWidth: "200px", height: "200px", objectFit: "cover" }}
-                            />
+                        <Image
+                            src={imageUrl}
+                            width={200}
+                            height={200}
+                            alt="image"
+                            style={{ maxWidth: "200px", height: "200px", objectFit: "cover" }}
+                        />
 
-                            <div dangerouslySetInnerHTML={{ __html: item.attributes.body.value }} className='newsDescription' />
-                            <p className="text-gray-700 mb-5">
-                                {
-                                    item.attributes.field_news_campaign_period &&
-                                    <p>Start: {item.attributes.field_news_campaign_period?.value}  end:{" "}
-                                {item.attributes.field_news_campaign_period?.end_value}</p>
-                                }
-                               
-                            </p>
-                            <div className="flex gap-6">
-                                <div className="rounded-full bg-gray-200 py-1 px-4 text-gray-800 hover:bg-slate-500">
-                                    <Link href={item.attributes.field_news_link.uri}>
-                                        {item.attributes.field_news_link.title}
-                                    </Link>
-                                </div>
+                        <div dangerouslySetInnerHTML={{ __html: item.attributes.body.value }} className='newsDescription' />
+                        <p className="text-gray-700 mb-5">
+                            {
+                                item.attributes.field_news_campaign_period &&
+                                <p>Start: {item.attributes.field_news_campaign_period?.value}  end:{" "}
+                                    {item.attributes.field_news_campaign_period?.end_value}</p>
+                            }
+                        </p>
+                        <div className="flex gap-6">
+                            <div className="rounded-full bg-gray-200 py-1 px-4 text-gray-800 hover:bg-slate-500">
+                                <Link href={item.attributes.field_news_link.uri}>
+                                    {item.attributes.field_news_link.title}
+                                </Link>
                             </div>
                         </div>
                     </div>
                 </div>
-            </>
+            </div>
         )
-    });
+    }));
 
     return (
-
         <div className="news">
             <div className='newsList flex'>
-                {getNews}
+                {getNews} {/* Render the fetched news items here */}
             </div>
         </div>
-
     )
 }
 
